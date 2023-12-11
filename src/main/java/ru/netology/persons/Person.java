@@ -17,6 +17,7 @@ public class Person {
         this.name = name;
         this.surname = surname;
     }
+
     Person(String name, String surname, int age) { // Убрал public, хочу чтоб доступ был только из этого же пакета
 //        if (name.isEmpty() || surname.isEmpty()) {
 //            throw new IllegalStateException("Имя и Фамилия не должны быть пустыми");
@@ -31,6 +32,7 @@ public class Person {
     public boolean hasAge() {
         return age >= 0;
     }
+
     public boolean hasAddress() {
         return !livingTown.isEmpty();
     }
@@ -38,9 +40,11 @@ public class Person {
     public String getName() {
         return name;
     }
+
     public String getSurname() {
         return surname;
     }
+
     public OptionalInt getAge() {
         if (hasAge()) {
             return OptionalInt.of(age);
@@ -48,6 +52,7 @@ public class Person {
             return OptionalInt.empty();
         }
     }
+
     public String getAddress() {
         return livingTown;
     }
@@ -55,6 +60,7 @@ public class Person {
     public void setAddress(String city) {
         this.livingTown = city;
     }
+
     public void happyBirthday() {
         if (hasAge()) {
             this.age++;
